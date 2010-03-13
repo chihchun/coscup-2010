@@ -1,6 +1,7 @@
 name = COSCUP 2010
 description = COSCUP 2010 Theme, Massively modified with Basic theme
 engine = phptemplate
+core = "6.x"
 
 regions[content_top] = Content top
 regions[navigation_bar] = Navigation Bar
