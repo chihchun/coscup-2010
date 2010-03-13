@@ -1,0 +1,20 @@
+name = COSCUP 2010
+description = COSCUP 2010 Theme, Massively modified with Basic theme
+engine = phptemplate
+
+regions[content_top] = Content top
+regions[navigation_bar] = Navigation Bar
+regions[sponsors] = Sponsors
+regions[sidebar] = Sidebar
+regions[footer_block] = Footer
+regions[content_bottom] = Content bottom
+
+features[] = logo
+features[] = name
+features[] = slogan
+features[] = favicon
+features[] = primary_links
+
+stylesheets[all][] = css/style.css
+stylesheets[print][] = css/print.css
+             
