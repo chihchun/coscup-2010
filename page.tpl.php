@@ -38,7 +38,7 @@
       <?php endif; ?>
     </article>
 
-    <?php if (!empty($primary_links)): ?>
+    <?php if (!empty($primary_links) || $navigation_bar): ?>
       <nav>
         <?php print theme('links', $primary_links, array('id' => 'primary', 'class' => 'links main-menu'));?>
         <?php if ($navigation_bar) print $navigation_bar; ?>
