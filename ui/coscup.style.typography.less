@@ -1,0 +1,36 @@
+//	coscup.style.container.less
+//	Created by Evadne Wu at Iridia, 2010
+
+.textSansSerif {
+
+	font-family: "Vegur", "LiHei Pro";
+
+}
+
+.transform(@predicate: rotate(45deg)) {
+
+	-moz-transform: @predicate;
+	-webkit-transform: @predicate;
+	-o-transform: @predicate;
+	transform: @predicate;
+
+}
+
+
+
+/* 
+
+	todo
+	
+	ADD font-face definitions
+	
+	a.	coscupText for text and large chunks of text, vegur normal + lihei normal, does not fall back to ordinary stuff but instead relies on DFHei and other proprietary typefaces
+	
+	b.	coscupTitle which utilizes LiHei normal, Vegur bold, Heiti TC normal and has outline: 1px solid transparent
+	
+	c.	coscupMonospace for monospace stuff such as email addresses.  addresses the issue with bitstream vera sans mono and falls back to courier.
+
+	
+
+
+*/

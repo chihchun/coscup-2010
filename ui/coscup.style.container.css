@@ -2,18 +2,93 @@
   content: "";
   font-family: "Wingdings";
 }
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, tbody, tfoot, thead, tr, th, td {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  outline: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+}
+body { line-height: 1; }
+ol, ul { list-style: none; }
+blockquote, q { quotes: none; }
+:focus { outline: 0; }
+ins { text-decoration: none; }
+del { text-decoration: line-through; }
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+nav, header, footer, article, block, section { display: block; }
 .withDownwardsArrow:before {
   content: "";
   font-family: "Wingdings";
 }
 .decorativeBar { height: 36px; }
+.decorativeBar:before {
+  display: block;
+  height: 9px;
+  width: 100%;
+  background: black;
+}
 .shinyPalette { border: inset 1px solid rgba(0, 0, 0, 0.125); }
-html { background-color: #336272; }
+.textSansSerif { font-family: "Vegur", "LiHei Pro"; }
+html {
+  background-color: #336272;
+  overflow-x: auto;
+}
 body {
   width: 864px;
   margin: 0 auto;
-  margin-top: 288px;
-  margin-bottom: 432px;
 }
+body header #coscupLogotype { display: block; }
+body section.context {
+  font-family: "Vegur", "LiHei Pro";
+  clear: both;
+  float: left;
+  width: 648px;
+}
+body section.context * {
+  font-size: 18px;
+  line-height: 24px;
+  line-height: 24px;
+  color: #ccced2;
+  color: rgba(255, 255, 255, 0.75);
+}
+body section.context h1 {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: normal;
+  color: #ffffff;
+}
+body section.context h2 {
+  font-size: 36px;
+  line-height: 45px;
+  font-weight: normal;
+  color: #ffffff;
+}
+body aside {
+  float: right;
+  width: 216px;
+  margin-left: 72px;
+  min-height: 288px;
+}
+body aside section.sidebarPalette { width: 100%; }
+body aside section.sidebarPalette + section.sidebarPalette { margin-top: 36px; }
 body aside section.sidebarPalette h2 { height: 36px; }
-footer { height: 36px; }
+body aside section.sidebarPalette h2:before {
+  display: block;
+  height: 9px;
+  width: 100%;
+  background: black;
+}
+body footer { clear: both; }
+body > footer { height: 36px; }
+body > footer:before {
+  display: block;
+  height: 9px;
+  width: 100%;
+  background: black;
+}

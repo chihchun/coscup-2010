@@ -4,7 +4,8 @@
 
 
 @import url("lib.monoSnippets.less");
-@import url("coscup.style.includes.less");
+@import url("coscup.style.includes");
+@import url("coscup.style.typography");
 
 
 
@@ -13,6 +14,7 @@
 html {
 
 	background-color: @coscupBackgroundColor;
+	overflow-x: auto;
 
 }
 
@@ -24,12 +26,95 @@ body {
 
 	width: 12 * @pack;
 	margin: 0 auto;
-	margin-top: 4 * @pack;
-	margin-bottom: 6 * @pack;
+	
+	header {
+	
+		#coscupLogotype {
+		
+			display: block;
+		
+		}
+	
+		nav {
+		
+		}
+		
+		a {
+			
+			h1 {
+		
+				
+
+			}	
+		
+		}
+	
+	}
+	
+	section.context {
+	
+		.textSansSerif;
+	
+		clear: both;
+		
+		float: left;
+		width: 9 * @pack;
+	
+		* {
+		
+			.text(18px, 24px);
+			line-height: 24px;
+
+			color: rgb(204, 206, 210);
+			color: rgba(255, 255, 255, .75);
+			
+		}
+		
+		h1, h2 {
+		
+			/* margin-bottom: 0.5em; */
+
+			.text(36px, 45px);
+
+			font-weight: normal;
+			color: rgb(255, 255, 255);
+		
+		}
+		
+		p + p,
+		* + h1,
+		* + h2 {
+		
+/* 			margin-top: 1em; */
+		
+		}
+		
+		section.plate {
+		
+//			.coscupTransparentPlateWithBorderColor(rgba(255, 255, 255, .125), 4.5px);
+		
+		}
+	
+	}
 	
 	aside {
 	
+		float: right;
+		
+		width: 3 * @pack;
+		margin-left: @pack;
+		
+		min-height: 4 * @pack;
+	
 		section.sidebarPalette {
+		
+			width: 100%;
+			
+			+ section.sidebarPalette {
+			
+				margin-top: 4 * @slice;
+			
+			}
 		
 			h2 {
 			
@@ -40,6 +125,12 @@ body {
 		}
 	
 	}
+	
+	footer {
+	
+		clear: both;
+	
+	}
 
 }
 
@@ -47,7 +138,7 @@ body {
 
 
 
-footer {
+body > footer {
 
 	.decorativeBar;
 
