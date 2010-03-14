@@ -1,0 +1,6 @@
+.withDownwardsArrow:before {
+  content: "";
+  font-family: "Wingdings";
+}
+.decorativeBar { height: 36px; }
+.shinyPalette { border: inset 1px solid rgba(0, 0, 0, 0.125); }

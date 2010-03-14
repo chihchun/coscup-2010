@@ -1,0 +1,19 @@
+.withDownwardsArrow:before {
+  content: "";
+  font-family: "Wingdings";
+}
+.withDownwardsArrow:before {
+  content: "";
+  font-family: "Wingdings";
+}
+.decorativeBar { height: 36px; }
+.shinyPalette { border: inset 1px solid rgba(0, 0, 0, 0.125); }
+html { background-color: #336272; }
+body {
+  width: 864px;
+  margin: 0 auto;
+  margin-top: 288px;
+  margin-bottom: 432px;
+}
+body aside section.sidebarPalette h2 { height: 36px; }
+footer { height: 36px; }
