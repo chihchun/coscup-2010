@@ -1,0 +1,4 @@
+.withDownwardsArrow:before {
+  content: "";
+  font-family: "Wingdings";
+}
