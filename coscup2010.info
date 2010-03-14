@@ -16,6 +16,5 @@ features[] = slogan
 features[] = favicon
 features[] = primary_links
 
-stylesheets[all][] = css/style.css
-stylesheets[print][] = css/print.css
+stylesheets[all][] = ui/coscup.style.container.css
              

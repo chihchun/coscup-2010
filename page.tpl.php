@@ -5,7 +5,7 @@
 
 <head>
 
-	<title><?php print $head_title; ?></title>
+	<title>[debug mode] <?php print $head_title; ?></title>
 	<?php print $head; ?>
 	<?php print $styles; ?>
 	<?php print $scripts; ?>
