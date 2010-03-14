@@ -30,11 +30,11 @@
 
 <?php	if ($content_top) { ?>
 
-		<section id="content-top">
+                <header>
 
 			<?php print $content_top; ?>
-
-		</section>
+			
+		</header>
 
 <?php	} 
 	
@@ -53,9 +53,13 @@
 		<?php print $content; ?>
 
 		<?php if ($content_bottom): ?>
-			<section id="content-bottom">
+
+			<footer>
+
 				<?php print $content_bottom; ?>
-			</section>
+
+			</footer>
+
 		<?php endif; ?>
 
 	</article>
