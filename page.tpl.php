@@ -9,9 +9,13 @@
 
 
 <head><title><?php print $head_title; ?></title>
-<?php print $head; ?>
-<?php print $styles; ?>
-<?php print $scripts; ?>
+<?php 
+/* print $head; */
+/* a hack disabling the drupal style sheet: http://drupal.org/node/23217 */
+print str_replace('<style type="text/css" media="all">@import "misc/drupal.css";</style>', '', $head);
+print $styles;
+print $scripts;
+?>
 </head><body class="<?php print $body_classes; ?>">
 
 
