@@ -136,3 +136,12 @@ function coscup2010_id_safe($string) {
   }
   return $string;
 }
+
+/* a hack disabling the drupal style sheet: http://drupal.org/node/23217 */
+
+function phptemplate_stylesheet_import($path, $media = 'all') {
+  if ($path != base_path() .'modules/system/system-menus.css') {
+    return '<style type="text/css" media="'. $media .'">@import "'. $path .'";</style>';
+  }
+}
+
