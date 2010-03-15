@@ -15,6 +15,12 @@
 
 
 
+.stern {
+
+	-webkit-text-size-adjust: none;
+
+}
+
 a {
 
 	color: inherit;
@@ -36,48 +42,235 @@ a {
 
 
 
-.coscupNavigationTag {
-
-	display: inline-block;
-	vertical-align: top;
-	text-align: center;
-
-	height: 4 * @slice;
-	.text(18px, 36px);
+.coscupNavigationTagBright {
 	
+	.shadowed(rgba(0, 0, 0, .125), 0px, 4.5px, 9px);
+
+//	Needs bugfix, multiple text-shadows do not animate well
+
+	text-shadow:	0px 1px 0px rgba(255, 255, 255, .3),
+			0px -1px 0px rgba(0, 0, 0, .15);
+//			0px 0px 4.5px rgba(255, 255, 255, .75);
+
+ 	border-color: rgba(255, 255, 255, 1);
+	background-color: rgba(255, 255, 255, .55);	
+
+}
+
+.coscupNavigationTag(@borderWidth: 1px, @borderRadius: 9px) {
+
+	margin: 0 auto;
+
 	padding-top: @slice;
 	position: relative;
-	top: -1 * @slice;
+	top: (-1 * @slice) + (-1 * @borderWidth);
+
+	display: inline-block;
+	height: 4 * @slice;	
+	width: 1.5 * @pack;
+
+	vertical-align: top;
+
+	text-align: center;
+	.text(18px, 36px);
 	
-	.borderRadius(4.5px);
-	
-	background: rgba(255, 255, 255, .5);
-	border: 1px solid white;
-	margin: -1px;
-	
-	opacity: .75;
-	
+	.borderRadius(@borderRadius);	
+
+ 	
+	.shadowed(rgba(0, 0, 0, .125), 0px, 4.5px, 4.5px);
+
+ 	border: @borderWidth solid rgba(255, 255, 255, .75);
+	background: rgba(255, 255, 255, .35);
+
+	color: rgb(64, 64, 64);
+
+	text-shadow:	0px 1px 0px rgba(255, 255, 255, .3),
+			0px -1px 0px rgba(0, 0, 0, .15);
+						
+	.transitioning(.125s);
+
 	:hover {
 	
-		opacity: 1;
+		.coscupNavigationTagBright;
+	
+			
+	}
+
+}
+
+	
+
+
+
+
+
+
+
+
+
+.iPadStyleList {
+
+	position: absolute;
+	
+	background: rgba(0, 0, 0, .625);
+	border: 2px solid rgba(255, 255, 255, .65);
+
+	margin: -2px;	
+	margin-top: -2px + (2 * @slice);
+	
+	.borderRadius(9px);
+	.shadowed(rgba(0, 0, 0, .5), 0px, 0px, 4.5px);
+	
+	/* padding: (2 * @slice) 0px; */
+	
+	li {
+
+		text-align: center;
+		.text(18px, 54px);
+		height: 54px;
+	
+		margin: 0;
+		height: 4 * @slice;
+		
+			
+			margin-bottom: -1px;
+			border-bottom: 1px solid rgba(0, 0, 0, .35);
+			
+			
+		
+		:first-child {
+
+		
+		}
+		
+		+ li {
+		
+			margin-top: -1px;
+			border-top: 1px solid rgba(255, 255, 255, .35);
+		
+		}
+		
+		:last-child {
+		
+			margin-bottom: 0px;
+			border-bottom: none;
+		
+		
+		}
+			
+	}
+	
+	li.active,
+	li:hover {
+	
+		background-color:	rgba(255, 255, 255, .25);
+		
+		text-shadow:	0px 1px 0px rgba(0, 0, 0, .65);
 	
 	}
 	
-	margin-right: 4 * @slice;
+	:before {
 	
-	:last-child {
+		position: absolute;
+		top: -11px;
+		left: 18px;	
 	
-		margin-right: 0px;
+		display: block;
+	
+		width:0; 
+		height:0; 
+		
+		border: none;
+		border-color: transparent;
+		border-width: 9px;
+		border-style: solid;
+	
+		border-left: 9px solid transparent; 
+		border-right: 9px solid transparent;
+		border-bottom: 9px solid rgba(255, 255, 255, .65);	
+		border-top: 0;
+
+		content: "";
 	
 	}
 
 }
 
+.highGlossBar {
+
+	.stern;
+
+	min-height: 4 * @slice;
+	max-height: 4 * @slice;
+	height: 4 * @slice;
+	
+	background-color: rgba(255, 255, 255, .1);
+	border-top: 1px solid rgba(255, 255, 255, .5);
+	border-bottom: 1px solid rgba(0, 0, 0, .125);
+	
+	background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, .1)), color-stop(50%, rgba(255, 255, 255, .20)), color-stop(50%, rgba(255, 255, 255, .25)), to(rgba(255, 255, 255, .35)));
+			
+//		content: -moz-linear-gradient(left top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+
+	
+	:before,
+	:after {
+	
+		display: block;
+		margin: 0;
+		padding: 0;
+		border: none;
+		
+		height: @slice;
+		
+		position: relative;
+		
+		opacity: .25;
+	
+	}
+	
+	:before {
+	
+		top: -1.5 * @slice;
+	
+		content: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(rgba(0, 0, 0, 1)));
+			
+		content: -moz-linear-gradient(left top, rgba(0, 0, 0, 0), rgba(0, 0, 0, 1));
+	
+	}
+	
+	:after {
+	
+		top: .125 * @slice;
+				
+		content: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0)));
+			
+		content: -moz-linear-gradient(left top, rgba(0, 0, 0, 1), rgba(0, 0, 0, 0));
+		
+		height: 0.5 * @slice;
+	
+	}
+	
+	* {
+	
+		display: inline;
+		color: rgba(0, 0, 0, .75);
+		text-shadow:	0px 1px 0px rgba(255, 255, 255, .4),
+				0px -1px 0px rgba(0, 0, 0, .15),
+				0px 0px 0.5px rgba(0, 0, 0, .1);
+
+		.text(12px, 18px);
+		
+		font-weight: bold;
+	
+	}
+
+}
 
 html {
 
 	background-color: @coscupBackgroundColor;
-	overflow-x: auto;
+	overflow-x: hidden;
 	
 	.textSansSerif;
 	color: white;
@@ -112,13 +305,57 @@ html {
 
 
 
-body {
+.wrap {
+	
+	display: block;
 
 	min-width: @coscupPageWidth;
 	width: @coscupPageWidth;
 	max-width: 100%;
 	
 	margin: 0 auto;
+
+}
+
+
+
+
+
+#reportBug {
+
+	position: fixed;
+	
+	left: 50%;
+	margin-left: 7.5 * @pack;
+	
+	.transitioning(.125s);
+	
+	opacity: .65;
+	
+	:hover {
+	
+		opacity: 1;
+	
+	}
+		
+	span {
+	
+		display: none;
+	
+	}
+	
+	width: @pack;
+	height: 1.5 * @pack;
+	background: url("coscup.reportBug.png") top left no-repeat;
+		
+}
+
+
+body {
+
+	.wrap;
+	
+	overflow: hidden;
 	
 	display: block;
 	
@@ -137,20 +374,37 @@ body {
 		
 	header {
 	
+		.stern;
+	
+		height: 3 * @pack;
+		
 		nav {
 		
 			display: block;
 		
 			ul.main-menu {
 			
-				padding-left: 0.75 * @pack;
-			
+				padding: 0px (0.5 * @pack);
+				
+				display: table;
+				
 				li {
 				
-					.coscupNavigationTag;
-					min-width: 1.5 * @pack;
+					display: table-cell;
+					width: 2 * @pack;
+					height: 1 * @pack;
+					overflow: hidden;
+					text-align: center;
+					
+					a {
+					
+						.coscupNavigationTag;
+					
+					}
 					
 				}
+				
+				height: 36px;
 			
 			}
 		
@@ -162,8 +416,84 @@ body {
 				position: absolute;
 				right: 0px;
 				top: 0px;
+				
+				h3 {
+				
+					z-index: 128;
+				
+				//	We lift the tag instead of the menu since elements with a negative z-index are not clickable.
+				
+				
+				
+					.coscupNavigationTag;
+
+				//	.coscupNavigationTagBright; — Toggle this class with script to make a persistent hover state.
+					
+					text-align: left;
+					text-indent: 2 * @slice;				
+					font-weight: normal;
+					
+					width: @coscupSidebarWidth;
+					
+/*					:after {
+					
+						font-family: "Arial Rounded Bold MT", "Arial Rounded MT";
+
+						font-weight: bold;
+					
+						content: "?";
+						
+						display: inline-block;
+						float: right;
+						height: 4 * @slice;
+						width: 4 * @slice;
+						line-height: 4 * @slice;
+					
+					}	*/
+				
+				}
+				
+				ul {
+				
+					width: @coscupSidebarWidth;
+					.iPadStyleList;
+					
+					li {
+					
+						height: 6 * @slice;
+					
+					}
+				
+				}
 			
 			}
+		
+		}
+		
+		h1 {
+		
+			a {
+			
+				span {
+			
+					display: none;
+			
+				}
+				
+				width: 7 * @pack;
+				height: 2 * @pack;
+				
+				display: block;
+				
+				background: url("coscup.logo.png");
+			
+			}
+		
+		}
+		
+		h1 + p {
+		
+			display: none;
 		
 		}
 		
@@ -177,6 +507,8 @@ body {
 	
 	header + section {
 	
+		min-height: 8 * @pack;
+	
 		display: table;
 	
 		article, aside {
@@ -189,10 +521,75 @@ body {
 		
 			width: auto;
 			padding: 0 @pack;
+			
+			* {
+			
+				margin: 0;
+				font-weight: normal;
+			
+			}
+			
+			* + h1 {
+			
+				padding-top: @pack;
+			
+			}
+			
+			h1 {
+			
+				.text(36px, 54px);
+			
+			}
+			
+			* + h2 {
+			
+				padding-top: .5 * @pack;
+			
+			}
+			
+			h2 {
+			
+				.text(36px, 45px);
+				margin: 27px 0px 18px 0px;
+			
+			}
+			
+			p {
+			
+				color: rgba(255, 255, 255, .75);
+			
+				.text(18px, 24px);
+				
+				margin-bottom: 24px;
+				
+				:last-child {
+				
+					margin-bottom: inherit;
+				
+				}
+				
+			}
+			
+			hr {
+
+				height: 0px;
+				margin: (@slice - 1) (-4 * @slice);
+				
+				border: none;
+				background: none;
+				padding: none;
+				outline: none;
+				
+				border-top: 1px solid rgba(0, 0, 0, .1);
+				border-bottom: 1px solid rgba(255, 255, 255, .25);
+			
+			}
 		
 		}
 		
 		aside {
+		
+			.stern;
 		
 			.coscupSidebar;
 		
@@ -205,6 +602,69 @@ body {
 		}
 	
 	}
+	
+	footer {
+
+		position: absolute;
+
+		left: 0px;
+		right: 0px;
+	
+		.highGlossBar;
+		
+		margin-top: 36px;
+		margin-bottom: 36px;
+		
+		ul {
+		
+			/* display: inline-block; */
+			/* float: right; */
+			
+			li {
+			
+				display: inline;
+				
+				+ li {
+				
+					:before {
+					
+						content: " | ";
+					
+					}
+				
+				}
+			
+			}
+		
+		}
+		
+		.wrap {
+		
+			* {
+			
+				display: block;
+			
+			}
+		
+		}
+		
+		.wrap > *:first-child {
+			
+				padding-left: @pack;
+			
+			}
+		
+		.wrap >	*:last-child {
+			
+				display: block;
+				padding-right: @pack;
+				float: right;
+			
+			}
+	
+	}
+	
+	margin-bottom: 1.5 * @pack;
 
 }
 

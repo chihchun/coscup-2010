@@ -120,8 +120,12 @@ print $scripts;
 
 <footer>
 
-	<?php print $footer_message; ?>
-	<?php print $footer_block; ?>
+	<section class="wrap">
+
+		<span><?php print $footer_message; ?></span>
+		<?php print $footer_block; ?>
+	
+	</section>
 
 </footer>
 

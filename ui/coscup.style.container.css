@@ -34,7 +34,20 @@ nav, header, footer, article, block, section { display: block; }
   background: black;
 }
 .shinyPalette { border: inset 1px solid rgba(0, 0, 0, 0.125); }
-.textSansSerif { font-family: "Vegur", "LiHei Pro"; }
+@font-face {
+  font-family: "coscupContextual";
+  font-style: normal;
+  font-weight: normal;
+  src: local("Vegur"), local("Myriad Pro"), local("Myriad"), local("LiHei Pro");
+}
+@font-face {
+  font-family: "coscupContextual";
+  font-style: normal;
+  font-weight: bold;
+  src: local("Vegur-Bold"), local("Myriad Pro"), local("Myriad"), local("LiHeiPro"), local("LiHei Pro");
+}
+.textSansSerif { font-family: "coscupContextual"; }
+.stern { -webkit-text-size-adjust: none; }
 a {
   color: inherit;
   text-decoration: inherit;
@@ -45,34 +58,128 @@ a {
   width: 216px;
   padding: 0 36px;
 }
-.coscupNavigationTag {
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
-  height: 36px;
-  font-size: 18px;
-  line-height: 36px;
-  padding-top: 9px;
-  position: relative;
-  top: -9px;
-  -webkit-border-radius: 4.5px;
-  -moz-border-radius: 4.5px;
-  -o-border-radius: 4.5px;
-  border-radius: 4.5px;
-  -uu-border-radius: 4.5px;
-  behavior: url(lib.monoSnippets.hack.borderRadius.htc);
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  margin: -1px;
-  opacity: 0.75;
-  margin-right: 36px;
+.coscupNavigationTagBright {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.55);
 }
-.coscupNavigationTag:hover { opacity: 1; }
-.coscupNavigationTag:last-child { margin-right: 0px; }
+.iPadStyleList {
+  position: absolute;
+  background: rgba(0, 0, 0, 0.625);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  margin: -2px;
+  margin-top: 16px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  border-radius: 9px;
+  -uu-border-radius: 9px;
+  behavior: url(lib.monoSnippets.hack.borderRadius.htc);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+}
+.iPadStyleList li {
+  text-align: center;
+  font-size: 18px;
+  line-height: 54px;
+  height: 54px;
+  margin: 0;
+  height: 36px;
+  margin-bottom: -1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+.iPadStyleList li + li {
+  margin-top: -1px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+.iPadStyleList li:last-child {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+.iPadStyleList li.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.65);
+}
+.iPadStyleList li:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.65);
+}
+.iPadStyleList:before {
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: none;
+  border-color: transparent;
+  border-width: 9px;
+  border-style: solid;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid rgba(255, 255, 255, 0.65);
+  border-top: 0;
+  content: "";
+}
+.highGlossBar {
+  -webkit-text-size-adjust: none;
+  min-height: 36px;
+  max-height: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(50%, rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0.35)));
+}
+.highGlossBar:before {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 9px;
+  position: relative;
+  opacity: 0.25;
+}
+.highGlossBar:after {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 9px;
+  position: relative;
+  opacity: 0.25;
+}
+.highGlossBar:before {
+  top: -13.5px;
+  content: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000000));
+  content: -moz-linear-gradient(left top, rgba(0, 0, 0, 0), #000000);
+}
+.highGlossBar:after {
+  top: 1.125px;
+  content: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+  content: -moz-linear-gradient(left top, #000000, rgba(0, 0, 0, 0));
+  height: 4.5px;
+}
+.highGlossBar * {
+  display: inline;
+  color: rgba(0, 0, 0, 0.75);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px -1px 0px rgba(0, 0, 0, 0.15), 0px 0px 0.5px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+}
 html {
   background-color: #336272;
-  overflow-x: auto;
-  font-family: "Vegur", "LiHei Pro";
+  overflow-x: hidden;
+  font-family: "coscupContextual";
   color: white;
 }
 .d {
@@ -85,12 +192,35 @@ html {
   outline: 1px solid rgba(255, 255, 255, 0.125);
 }
 .d *:hover { outline: 4.5px solid rgba(255, 64, 64, 0.5); }
-body {
+.wrap {
+  display: block;
   min-width: 1080px;
   width: 1080px;
   max-width: 100%;
   margin: 0 auto;
+}
+#reportBug {
+  position: fixed;
+  left: 50%;
+  margin-left: 540px;
+  -webkit-transition: all 0.125s linear;
+  -moz-transition: all 0.125s linear;
+  opacity: 0.65;
+  width: 72px;
+  height: 108px;
+  background: url("coscup.reportBug.png") top left no-repeat;
+}
+#reportBug:hover { opacity: 1; }
+#reportBug span { display: none; }
+body {
   display: block;
+  min-width: 1080px;
+  width: 1080px;
+  max-width: 100%;
+  margin: 0 auto;
+  overflow: hidden;
+  display: block;
+  margin-bottom: 108px;
 }
 body header {
   display: list-item;
@@ -104,36 +234,66 @@ body footer {
   display: list-item;
   list-style: none;
 }
+body header {
+  -webkit-text-size-adjust: none;
+  height: 216px;
+}
 body header nav {
   display: block;
   position: relative;
 }
-body header nav ul.main-menu { padding-left: 54px; }
-body header nav ul.main-menu li {
-  display: inline-block;
-  vertical-align: top;
-  text-align: center;
+body header nav ul.main-menu {
+  padding: 0px 36px;
+  display: table;
   height: 36px;
-  font-size: 18px;
-  line-height: 36px;
+}
+body header nav ul.main-menu li {
+  display: table-cell;
+  width: 144px;
+  height: 72px;
+  overflow: hidden;
+  text-align: center;
+}
+body header nav ul.main-menu li a {
+  margin: 0 auto;
   padding-top: 9px;
   position: relative;
-  top: -9px;
-  -webkit-border-radius: 4.5px;
-  -moz-border-radius: 4.5px;
-  -o-border-radius: 4.5px;
-  border-radius: 4.5px;
-  -uu-border-radius: 4.5px;
+  top: -10px;
+  display: inline-block;
+  height: 36px;
+  width: 108px;
+  vertical-align: top;
+  text-align: center;
+  font-size: 18px;
+  line-height: 36px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  border-radius: 9px;
+  -uu-border-radius: 9px;
   behavior: url(lib.monoSnippets.hack.borderRadius.htc);
-  background: rgba(255, 255, 255, 0.5);
-  border: 1px solid white;
-  margin: -1px;
-  opacity: 0.75;
-  margin-right: 36px;
-  min-width: 108px;
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.35);
+  color: #404040;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.125s linear;
+  -moz-transition: all 0.125s linear;
 }
-body header nav ul.main-menu li:hover { opacity: 1; }
-body header nav ul.main-menu li:last-child { margin-right: 0px; }
+body header nav ul.main-menu li a:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.55);
+}
 body header nav section.block-locale {
   width: 216px;
   padding: 0 36px;
@@ -141,15 +301,228 @@ body header nav section.block-locale {
   right: 0px;
   top: 0px;
 }
+body header nav section.block-locale h3 {
+  z-index: 128;
+  margin: 0 auto;
+  padding-top: 9px;
+  position: relative;
+  top: -10px;
+  display: inline-block;
+  height: 36px;
+  width: 108px;
+  vertical-align: top;
+  text-align: center;
+  font-size: 18px;
+  line-height: 36px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  border-radius: 9px;
+  -uu-border-radius: 9px;
+  behavior: url(lib.monoSnippets.hack.borderRadius.htc);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 4.5px;
+  border: 1px solid rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.35);
+  color: #404040;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  -webkit-transition: all 0.125s linear;
+  -moz-transition: all 0.125s linear;
+  text-align: left;
+  text-indent: 18px;
+  font-weight: normal;
+  width: 216px;
+}
+body header nav section.block-locale h3:hover {
+  -webkit-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -o-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.125) 0px 4.5px 9px;
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.3), 0px -1px 0px rgba(0, 0, 0, 0.15);
+  border-color: #ffffff;
+  background-color: rgba(255, 255, 255, 0.55);
+}
+body header nav section.block-locale ul {
+  width: 216px;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.625);
+  border: 2px solid rgba(255, 255, 255, 0.65);
+  margin: -2px;
+  margin-top: 16px;
+  -webkit-border-radius: 9px;
+  -moz-border-radius: 9px;
+  -o-border-radius: 9px;
+  border-radius: 9px;
+  -uu-border-radius: 9px;
+  behavior: url(lib.monoSnippets.hack.borderRadius.htc);
+  -webkit-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  -moz-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  -o-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+  -uu-box-shadow: rgba(0, 0, 0, 0.5) 0px 0px 4.5px;
+}
+body header nav section.block-locale ul li {
+  text-align: center;
+  font-size: 18px;
+  line-height: 54px;
+  height: 54px;
+  margin: 0;
+  height: 36px;
+  margin-bottom: -1px;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.35);
+}
+body header nav section.block-locale ul li + li {
+  margin-top: -1px;
+  border-top: 1px solid rgba(255, 255, 255, 0.35);
+}
+body header nav section.block-locale ul li:last-child {
+  margin-bottom: 0px;
+  border-bottom: none;
+}
+body header nav section.block-locale ul li.active {
+  background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.65);
+}
+body header nav section.block-locale ul li:hover {
+  background-color: rgba(255, 255, 255, 0.25);
+  text-shadow: 0px 1px 0px rgba(0, 0, 0, 0.65);
+}
+body header nav section.block-locale ul:before {
+  position: absolute;
+  top: -11px;
+  left: 18px;
+  display: block;
+  width: 0;
+  height: 0;
+  border: none;
+  border-color: transparent;
+  border-width: 9px;
+  border-style: solid;
+  border-left: 9px solid transparent;
+  border-right: 9px solid transparent;
+  border-bottom: 9px solid rgba(255, 255, 255, 0.65);
+  border-top: 0;
+  content: "";
+}
+body header nav section.block-locale ul li { height: 54px; }
+body header h1 a {
+  width: 504px;
+  height: 144px;
+  display: block;
+  background: url("coscup.logo.png");
+}
+body header h1 a span { display: none; }
+body header h1 + p { display: none; }
 body header a { display: block; }
-body header + section { display: table; }
+body header + section {
+  min-height: 576px;
+  display: table;
+}
 body header + section article { display: table-cell; }
 body header + section aside { display: table-cell; }
 body header + section article {
   width: auto;
   padding: 0 72px;
 }
+body header + section article * {
+  margin: 0;
+  font-weight: normal;
+}
+body header + section article * + h1 { padding-top: 72px; }
+body header + section article h1 {
+  font-size: 36px;
+  line-height: 54px;
+}
+body header + section article * + h2 { padding-top: 36px; }
+body header + section article h2 {
+  font-size: 36px;
+  line-height: 45px;
+  margin: 27px 0px 18px 0px;
+}
+body header + section article p {
+  color: rgba(255, 255, 255, 0.75);
+  font-size: 18px;
+  line-height: 24px;
+  margin-bottom: 24px;
+}
+body header + section article p:last-child { margin-bottom: inherit; }
+body header + section article hr {
+  height: 0px;
+  margin: 8px -36px;
+  border: none;
+  background: none;
+  padding: none;
+  outline: none;
+  border-top: 1px solid rgba(0, 0, 0, 0.1);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.25);
+}
 body header + section aside {
+  -webkit-text-size-adjust: none;
   width: 216px;
   padding: 0 36px;
+}
+body footer {
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  -webkit-text-size-adjust: none;
+  min-height: 36px;
+  max-height: 36px;
+  height: 36px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-top: 1px solid rgba(255, 255, 255, 0.5);
+  border-bottom: 1px solid rgba(0, 0, 0, 0.125);
+  background-image: -webkit-gradient(linear, left top, left bottom, from(rgba(255, 255, 255, 0.1)), color-stop(50%, rgba(255, 255, 255, 0.2)), color-stop(50%, rgba(255, 255, 255, 0.25)), to(rgba(255, 255, 255, 0.35)));
+  margin-top: 36px;
+  margin-bottom: 36px;
+}
+body footer:before {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 9px;
+  position: relative;
+  opacity: 0.25;
+}
+body footer:after {
+  display: block;
+  margin: 0;
+  padding: 0;
+  border: none;
+  height: 9px;
+  position: relative;
+  opacity: 0.25;
+}
+body footer:before {
+  top: -13.5px;
+  content: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0)), to(#000000));
+  content: -moz-linear-gradient(left top, rgba(0, 0, 0, 0), #000000);
+}
+body footer:after {
+  top: 1.125px;
+  content: -webkit-gradient(linear, left top, left bottom, from(#000000), to(rgba(0, 0, 0, 0)));
+  content: -moz-linear-gradient(left top, #000000, rgba(0, 0, 0, 0));
+  height: 4.5px;
+}
+body footer * {
+  display: inline;
+  color: rgba(0, 0, 0, 0.75);
+  text-shadow: 0px 1px 0px rgba(255, 255, 255, 0.4), 0px -1px 0px rgba(0, 0, 0, 0.15), 0px 0px 0.5px rgba(0, 0, 0, 0.1);
+  font-size: 12px;
+  line-height: 18px;
+  font-weight: bold;
+}
+body footer ul li { display: inline; }
+body footer ul li + li:before { content: " | "; }
+body footer .wrap * { display: block; }
+body footer .wrap > *:first-child { padding-left: 72px; }
+body footer .wrap > *:last-child {
+  display: block;
+  padding-right: 72px;
+  float: right;
 }
