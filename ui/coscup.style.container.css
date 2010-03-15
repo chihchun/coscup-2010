@@ -35,60 +35,121 @@ nav, header, footer, article, block, section { display: block; }
 }
 .shinyPalette { border: inset 1px solid rgba(0, 0, 0, 0.125); }
 .textSansSerif { font-family: "Vegur", "LiHei Pro"; }
+a {
+  color: inherit;
+  text-decoration: inherit;
+  font-weight: inherit;
+  font-style: inherit;
+}
+.coscupSidebar {
+  width: 216px;
+  padding: 0 36px;
+}
+.coscupNavigationTag {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 36px;
+  font-size: 18px;
+  line-height: 36px;
+  padding-top: 9px;
+  position: relative;
+  top: -9px;
+  -webkit-border-radius: 4.5px;
+  -moz-border-radius: 4.5px;
+  -o-border-radius: 4.5px;
+  border-radius: 4.5px;
+  -uu-border-radius: 4.5px;
+  behavior: url(lib.monoSnippets.hack.borderRadius.htc);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  margin: -1px;
+  opacity: 0.75;
+  margin-right: 36px;
+}
+.coscupNavigationTag:hover { opacity: 1; }
+.coscupNavigationTag:last-child { margin-right: 0px; }
 html {
   background-color: #336272;
   overflow-x: auto;
-}
-body {
-  width: 864px;
-  margin: 0 auto;
-}
-body header #coscupLogotype { display: block; }
-body section.context {
   font-family: "Vegur", "LiHei Pro";
-  clear: both;
-  float: left;
-  width: 648px;
+  color: white;
 }
-body section.context * {
+.d {
+  background: rgba(255, 255, 255, 0.125);
+  outline: 1px solid rgba(255, 255, 255, 0.125);
+}
+.d:hover { outline: 4.5px solid rgba(255, 64, 64, 0.5); }
+.d * {
+  background: rgba(255, 255, 255, 0.125);
+  outline: 1px solid rgba(255, 255, 255, 0.125);
+}
+.d *:hover { outline: 4.5px solid rgba(255, 64, 64, 0.5); }
+body {
+  min-width: 1080px;
+  width: 1080px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: block;
+}
+body header {
+  display: list-item;
+  list-style: none;
+}
+body header + section {
+  display: list-item;
+  list-style: none;
+}
+body footer {
+  display: list-item;
+  list-style: none;
+}
+body header nav {
+  display: block;
+  position: relative;
+}
+body header nav ul.main-menu { padding-left: 54px; }
+body header nav ul.main-menu li {
+  display: inline-block;
+  vertical-align: top;
+  text-align: center;
+  height: 36px;
   font-size: 18px;
-  line-height: 24px;
-  line-height: 24px;
-  color: #ccced2;
-  color: rgba(255, 255, 255, 0.75);
+  line-height: 36px;
+  padding-top: 9px;
+  position: relative;
+  top: -9px;
+  -webkit-border-radius: 4.5px;
+  -moz-border-radius: 4.5px;
+  -o-border-radius: 4.5px;
+  border-radius: 4.5px;
+  -uu-border-radius: 4.5px;
+  behavior: url(lib.monoSnippets.hack.borderRadius.htc);
+  background: rgba(255, 255, 255, 0.5);
+  border: 1px solid white;
+  margin: -1px;
+  opacity: 0.75;
+  margin-right: 36px;
+  min-width: 108px;
 }
-body section.context h1 {
-  font-size: 36px;
-  line-height: 45px;
-  font-weight: normal;
-  color: #ffffff;
-}
-body section.context h2 {
-  font-size: 36px;
-  line-height: 45px;
-  font-weight: normal;
-  color: #ffffff;
-}
-body aside {
-  float: right;
+body header nav ul.main-menu li:hover { opacity: 1; }
+body header nav ul.main-menu li:last-child { margin-right: 0px; }
+body header nav section.block-locale {
   width: 216px;
-  margin-left: 72px;
-  min-height: 288px;
+  padding: 0 36px;
+  position: absolute;
+  right: 0px;
+  top: 0px;
 }
-body aside section.sidebarPalette { width: 100%; }
-body aside section.sidebarPalette + section.sidebarPalette { margin-top: 36px; }
-body aside section.sidebarPalette h2 { height: 36px; }
-body aside section.sidebarPalette h2:before {
-  display: block;
-  height: 9px;
-  width: 100%;
-  background: black;
+body header a { display: block; }
+body header + section { display: table; }
+body header + section article { display: table-cell; }
+body header + section aside { display: table-cell; }
+body header + section article {
+  width: auto;
+  padding: 0 72px;
 }
-body footer { clear: both; }
-body > footer { height: 36px; }
-body > footer:before {
-  display: block;
-  height: 9px;
-  width: 100%;
-  background: black;
+body header + section aside {
+  width: 216px;
+  padding: 0 36px;
 }
