@@ -1,4 +1,10 @@
 <?php
+
+// Auto-rebuild the theme registry during theme development.
+if (theme_get_setting('basic_rebuild_registry')) {
+  drupal_rebuild_theme_registry();
+}
+
 /*
  *	This function create the EDIT LINKS for blocks and menus blocks.
  *	When overing a block (except in IE6), some links appear to edit

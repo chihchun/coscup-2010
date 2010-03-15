@@ -18,3 +18,4 @@ features[] = primary_links
 
 stylesheets[all][] = ui/coscup.style.container.css
              
+settings[coscup2010_rebuild_registry]     = 0
