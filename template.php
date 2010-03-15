@@ -92,7 +92,7 @@ function coscup2010_preprocess_block(&$vars, $hook) {
         $vars['edit_links_array'] = $edit_links;
         $vars['edit_links'] = '<div class="edit">' . implode(' ', $edit_links) . '</div>';
       }
-  }
+}
 
 /* 	
  * 	Add custom classes to menu item
@@ -136,12 +136,3 @@ function coscup2010_id_safe($string) {
   }
   return $string;
 }
-
-/* a hack disabling the drupal style sheet: http://drupal.org/node/23217 */
-
-function phptemplate_stylesheet_import($path, $media = 'all') {
-  if ($path != base_path() .'modules/system/system-menus.css') {
-    return '<style type="text/css" media="'. $media .'">@import "'. $path .'";</style>';
-  }
-}
-

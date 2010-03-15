@@ -17,5 +17,6 @@ features[] = favicon
 features[] = primary_links
 
 stylesheets[all][] = ui/coscup.style.container.css
+stylesheets[all][] = system-menus.css
              
 settings[coscup2010_rebuild_registry]     = 0
