@@ -199,6 +199,7 @@ html {
   max-width: 100%;
   margin: 0 auto;
 }
+.not-logged-in #reportBug { display: none; }
 #reportBug {
   position: fixed;
   left: 50%;
