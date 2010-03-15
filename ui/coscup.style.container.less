@@ -7,14 +7,104 @@
 @import url("coscup.style.includes");
 @import url("coscup.style.typography");
 
+@coscupPageWidth: 15 * @pack;
+@coscupSidebarWidth: 3 * @pack;
+@coscupSidebarHorizontalPadding: (0.5 * @pack);
 
 
+
+
+
+a {
+
+	color: inherit;
+	text-decoration: inherit;
+	font-weight: inherit;
+	font-style: inherit;
+
+}
+
+
+.coscupSidebar {
+
+	width: @coscupSidebarWidth;
+	padding: 0 @coscupSidebarHorizontalPadding;
+
+}
+
+
+
+
+
+.coscupNavigationTag {
+
+	display: inline-block;
+	vertical-align: top;
+	text-align: center;
+
+	height: 4 * @slice;
+	.text(18px, 36px);
+	
+	padding-top: @slice;
+	position: relative;
+	top: -1 * @slice;
+	
+	.borderRadius(4.5px);
+	
+	background: rgba(255, 255, 255, .5);
+	border: 1px solid white;
+	margin: -1px;
+	
+	opacity: .75;
+	
+	:hover {
+	
+		opacity: 1;
+	
+	}
+	
+	margin-right: 4 * @slice;
+	
+	:last-child {
+	
+		margin-right: 0px;
+	
+	}
+
+}
 
 
 html {
 
 	background-color: @coscupBackgroundColor;
 	overflow-x: auto;
+	
+	.textSansSerif;
+	color: white;
+
+}
+
+
+
+
+
+
+
+
+
+
+//	Debugger!
+
+.d, .d * {
+
+	background: rgba(255, 255, 255, .125);
+	outline: 1px solid rgba(255, 255, 255, .125);
+	
+	:hover {
+	
+		outline: 4.5px solid rgba(255, 64, 64, .5);
+	
+	}
 
 }
 
@@ -24,128 +114,99 @@ html {
 
 body {
 
-	width: 12 * @pack;
+	min-width: @coscupPageWidth;
+	width: @coscupPageWidth;
+	max-width: 100%;
+	
 	margin: 0 auto;
 	
+	display: block;
+	
+	header,
+	header + section,
+	footer {
+	
+		display: list-item;
+		list-style: none;
+	
+	}
+	
+	
+	
+	
+		
 	header {
 	
-		#coscupLogotype {
+		nav {
 		
 			display: block;
 		
-		}
-	
-		nav {
+			ul.main-menu {
+			
+				padding-left: 0.75 * @pack;
+			
+				li {
+				
+					.coscupNavigationTag;
+					min-width: 1.5 * @pack;
+					
+				}
+			
+			}
+		
+			position: relative;
+		
+			section.block-locale {
+			
+				.coscupSidebar;
+				position: absolute;
+				right: 0px;
+				top: 0px;
+			
+			}
 		
 		}
 		
 		a {
-			
-			h1 {
 		
+			display: block;
+		
+		}
+		
+	}
+	
+	header + section {
+	
+		display: table;
+	
+		article, aside {
+		
+			display: table-cell;
+		
+		}
+		
+		article {
+		
+			width: auto;
+			padding: 0 @pack;
+		
+		}
+		
+		aside {
+		
+			.coscupSidebar;
+		
+			section {
+			
 				
-
-			}	
-		
-		}
-	
-	}
-	
-	section.context {
-	
-		.textSansSerif;
-	
-		clear: both;
-		
-		float: left;
-		width: 9 * @pack;
-	
-		* {
-		
-			.text(18px, 24px);
-			line-height: 24px;
-
-			color: rgb(204, 206, 210);
-			color: rgba(255, 255, 255, .75);
-			
-		}
-		
-		h1, h2 {
-		
-			/* margin-bottom: 0.5em; */
-
-			.text(36px, 45px);
-
-			font-weight: normal;
-			color: rgb(255, 255, 255);
-		
-		}
-		
-		p + p,
-		* + h1,
-		* + h2 {
-		
-/* 			margin-top: 1em; */
-		
-		}
-		
-		section.plate {
-		
-//			.coscupTransparentPlateWithBorderColor(rgba(255, 255, 255, .125), 4.5px);
-		
-		}
-	
-	}
-	
-	aside {
-	
-		float: right;
-		
-		width: 3 * @pack;
-		margin-left: @pack;
-		
-		min-height: 4 * @pack;
-	
-		section.sidebarPalette {
-		
-			width: 100%;
-			
-			+ section.sidebarPalette {
-			
-				margin-top: 4 * @slice;
-			
-			}
-		
-			h2 {
-			
-				.decorativeBar;
 			
 			}
 		
 		}
 	
 	}
-	
-	footer {
-	
-		clear: both;
-	
-	}
 
 }
-
-
-
-
-
-body > footer {
-
-	.decorativeBar;
-
-}
-
-
-
 
 
 
