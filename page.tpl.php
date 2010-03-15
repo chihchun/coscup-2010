@@ -44,6 +44,8 @@ print $scripts;
 	
 	<?php if (!empty($site_slogan)): ?><p><?php print $site_slogan; ?></p><?php endif; ?>
 
+	<a id="reportBug" href="http://github.com/monoceroi/coscup-2010/issues"><span>Report a Bug</span></a>
+
 </header>
 
 
