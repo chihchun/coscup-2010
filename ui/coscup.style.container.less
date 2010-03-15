@@ -626,6 +626,26 @@ body {
 		margin-top: 36px;
 		margin-bottom: 36px;
 		
+		.wrap > * {
+			
+			display: inline-block;
+			
+		}
+		
+		.wrap > *:first-child {
+			
+				padding-left: @pack;
+				float: left;
+			
+			}
+		
+		.wrap >	*:last-child {
+			
+				padding-right: @pack;
+				float: right;
+			
+			}
+		
 		ul {
 		
 			/* display: inline-block; */
@@ -649,29 +669,7 @@ body {
 		
 		}
 		
-		.wrap {
-		
-			* {
-			
-				display: block;
-			
-			}
-		
-		}
-		
-		.wrap > *:first-child {
-			
-				padding-left: @pack;
-			
-			}
-		
-		.wrap >	*:last-child {
-			
-				display: block;
-				padding-right: @pack;
-				float: right;
-			
-			}
+
 	
 	}
 	

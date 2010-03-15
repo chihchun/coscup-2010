@@ -518,12 +518,14 @@ body footer * {
   line-height: 18px;
   font-weight: bold;
 }
-body footer ul li { display: inline; }
-body footer ul li + li:before { content: " | "; }
-body footer .wrap * { display: block; }
-body footer .wrap > *:first-child { padding-left: 72px; }
+body footer .wrap > * { display: inline-block; }
+body footer .wrap > *:first-child {
+  padding-left: 72px;
+  float: left;
+}
 body footer .wrap > *:last-child {
-  display: block;
   padding-right: 72px;
   float: right;
 }
+body footer ul li { display: inline; }
+body footer ul li + li:before { content: " | "; }
