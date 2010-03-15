@@ -53,31 +53,47 @@
 
 
 	
-<section class="context">
+<section>
 
 	<article>
 
-	<?php	if ($content_top) { ?>
-	
-			<header><?php print $content_top; ?></header>
-	
-	<?php	} 
-			
-		if ($tabs) { ?>
-			
-			<nav class="tabs"><?php print $tabs; ?></nav>
-	
-	<?php	} ?>
-	
-		<?php print $content; ?>
-	
-	<?php	if ($content_bottom) { ?>
+		<?php	if ($content_top) { ?>
 		
-			<footer><?php print $content_bottom; ?></footer>
+				<header><?php print $content_top; ?></header>
 		
-	<?php 	} ?>
+		<?php	} 
+				
+			if ($tabs) { ?>
+				
+				<nav class="tabs"><?php print $tabs; ?></nav>
+		
+		<?php	} ?>
+		
+			<?php print $content; ?>
+		
+		<?php	if ($content_bottom) { ?>
+			
+				<footer><?php print $content_bottom; ?></footer>
+			
+		<?php 	} ?>
 
 	</article>
+	
+	<aside>
+
+		<?php	if ($sponsors) { ?>
+	
+			<section id="sponsors"><?php print $sponsors; ?></section>
+	
+		<?php	} ?>
+	
+		<?php	if ($sidebar) { ?>
+		
+			<section id="sidebar"><?php print $sidebar; ?></section>
+		
+		<?php	} ?>
+
+	</aside>
 
 </section>
 
@@ -90,23 +106,6 @@
 
 
 
-<aside>
-
-	Dolorem testing
-
-	<?php	if ($sponsors) { ?>
-
-		<section id="sponsors"><?php print $sponsors; ?></section>
-
-	<?php	} ?>
-
-	<?php	if ($sidebar) { ?>
-	
-		<section id="sidebar"><?php print $sidebar; ?></section>
-	
-	<?php	} ?>
-
-</aside>
 
 
 
